@@ -205,8 +205,6 @@ ul { list-style: none; }
 .meter__fill { position: absolute; inset: 0 22% 0 0; background: #3fb34f; border-radius: 99px; }
 .meter__knob { position: absolute; left: 78%; top: 50%; width: 20px; height: 20px; border-radius: 50%; background: #3fb34f; border: 4px solid #fff; transform: translate(-50%, -50%); box-shadow: 0 2px 6px rgba(0,0,0,.2); }
 
-.tile--c { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: center; }
-.tile--c .ph { --ar: 1 / 1; }
 
 .socials { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 .socials__icons { display: flex; gap: 14px; }
@@ -255,9 +253,6 @@ ul { list-style: none; }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
 
 /* ---------- About ---------- */
-.about-intro { display: grid; grid-template-columns: 1fr 360px; gap: 22px; align-items: stretch; }
-.about-intro .ph { --ar: auto; height: 100%; min-height: 320px; }
-@media (max-width: 900px) { .about-intro { grid-template-columns: 1fr; } }
 
 .edu-row { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); }
 .edu-row:last-child { border-bottom: 0; }
@@ -266,7 +261,6 @@ ul { list-style: none; }
 .edu-row .hl { color: var(--lime); font-family: var(--font-head); font-weight: 700; }
 
 .interest { display: flex; flex-direction: column; gap: 14px; }
-.interest .ph { --ar: 4 / 3; }
 
 /* ---------- Stats ---------- */
 .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; }
@@ -282,6 +276,8 @@ ul { list-style: none; }
 .entry__media { display: grid; grid-template-columns: 1.6fr 1fr; gap: 14px; }
 .entry__media .ph:first-child { --ar: 16 / 10; }
 .entry__media .ph:last-child { --ar: auto; height: 100%; }
+.entry__media--single { grid-template-columns: 1fr; }
+.entry__media--single .ph:first-child { --ar: 21 / 9; height: auto; }
 .entry__body { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
 .entry__body h4 { font-size: 1rem; color: var(--text); margin-bottom: 8px; }
 .entry__body p { color: var(--muted); font-size: 0.95rem; }
@@ -410,7 +406,6 @@ ul { list-style: none; }
                 <small style="margin-top:12px">Stronger than a ladder frame baseline</small>
               </a>
               <a class="tile tile--lime tile--c" href="#stratosat">
-                <div class="ph ph--lime"><span>StratoSat CanSat</span><small>Photo placeholder</small></div>
                 <div>
                   <p class="big">100%</p>
                   <small>Preliminary design review score as Project Manager of StratoSat</small>
@@ -446,17 +441,6 @@ ul { list-style: none; }
       <p class="lead">I'm in my final year of school (Year 13) at King's College School, Wimbledon, where I study the IB Diploma. I'm most interested in the space where physics, engineering and economics meet.</p>
     </section>
 
-    <section class="container section">
-      <div class="about-intro">
-        <div class="card reveal">
-          <h3>My story</h3>
-          <p>[Placeholder: 3 to 4 lines about how I got into engineering. For example, the first thing I ever took apart, or the moment F1 made me want to understand aerodynamics.]</p>
-          <p>These days I spend most of my time designing and testing real hardware, from an EV chassis for last mile delivery to the recovery parachute for a CanSat. I care about making engineering practical: a design only matters if it can actually be built, afforded and trusted.</p>
-          <p>Outside of engineering, I'm usually training for taekwondo, producing music, playing with my rock band, or watching F1.</p>
-        </div>
-        <div class="ph "><span>Photo of Ashwin working on a project</span><small>Photo placeholder</small></div>
-      </div>
-    </section>
 
     <section class="container section">
       <h2 class="section__title">Education</h2>
@@ -516,17 +500,14 @@ ul { list-style: none; }
       <h2 class="section__title">Beyond the lab</h2>
       <div class="grid-3">
         <div class="card interest reveal">
-          <div class="ph "><span>Taekwondo competition photo</span><small>Image placeholder</small></div>
           <h3>Taekwondo</h3>
           <p>I compete at national level and won a team silver medal at the British Taekwondo National Championship in 2024.</p>
         </div>
         <div class="card interest reveal">
-          <div class="ph "><span>Music studio or band photo</span><small>Image placeholder</small></div>
           <h3>Music</h3>
           <p>I produce my own music, play in a rock band and hold ABRSM Grade 7 Piano with Distinction.</p>
         </div>
         <div class="card interest reveal">
-          <div class="ph "><span>F1 or motorsport photo</span><small>Image placeholder</small></div>
           <h3>Formula 1</h3>
           <p>F1 is where my interest in vehicle engineering started, and it still shapes how I think about chassis and performance.</p>
         </div>
@@ -564,9 +545,8 @@ ul { list-style: none; }
           </div>
           <span class="tag tag--lime">Published</span>
         </div>
-        <div class="entry__media">
+        <div class="entry__media entry__media--single">
           <div class="ph "><span>CAD render of the semi spaceframe chassis</span><small>Image placeholder</small></div>
-          <div class="ph "><span>FEA stress plot</span><small>Image placeholder</small></div>
         </div>
         <div class="entry__body">
           <div>
@@ -599,9 +579,8 @@ ul { list-style: none; }
           </div>
           <span class="tag tag--lime">Past UK Regionals</span>
         </div>
-        <div class="entry__media">
+        <div class="entry__media entry__media--single">
           <div class="ph "><span>StratoSat CanSat and team photo</span><small>Image placeholder</small></div>
-          <div class="ph "><span>Recovery parachute test</span><small>Image placeholder</small></div>
         </div>
         <div class="entry__body">
           <div>
@@ -632,10 +611,6 @@ ul { list-style: none; }
             <p class="meta">Independent economics research</p>
           </div>
           <span class="tag tag--lime">John Locke Shortlist</span>
-        </div>
-        <div class="entry__media">
-          <div class="ph "><span>Cover of the essay or a key chart</span><small>Image placeholder</small></div>
-          <div class="ph "><span>Payment systems comparison graphic</span><small>Image placeholder</small></div>
         </div>
         <div class="entry__body">
           <div>
@@ -684,10 +659,6 @@ ul { list-style: none; }
           </div>
           <span class="tag tag--lime">Client Report</span>
         </div>
-        <div class="entry__media">
-          <div class="ph "><span>Photo from the Tech Mahindra internship</span><small>Image placeholder</small></div>
-          <div class="ph "><span>Slide or chart from my client report</span><small>Image placeholder</small></div>
-        </div>
         <div class="entry__body">
           <div>
             <h4>The brief</h4>
@@ -713,9 +684,8 @@ ul { list-style: none; }
           </div>
           <span class="tag tag--lime">Hands On</span>
         </div>
-        <div class="entry__media">
+        <div class="entry__media entry__media--single">
           <div class="ph "><span>Photo at REGENT or of the sea glider</span><small>Image placeholder</small></div>
-          <div class="ph "><span>DC to DC converter installation</span><small>Image placeholder</small></div>
         </div>
         <div class="entry__body">
           <div>
@@ -759,9 +729,8 @@ ul { list-style: none; }
           </div>
           <span class="tag tag--lime">Community</span>
         </div>
-        <div class="entry__media">
+        <div class="entry__media entry__media--single">
           <div class="ph "><span>Cricket4Life team photo</span><small>Image placeholder</small></div>
-          <div class="ph "><span>Coaching or fundraising event</span><small>Image placeholder</small></div>
         </div>
         <div class="entry__body">
           <div>
@@ -792,9 +761,8 @@ ul { list-style: none; }
           </div>
           <span class="tag tag--lime">STEM Outreach</span>
         </div>
-        <div class="entry__media">
+        <div class="entry__media entry__media--single">
           <div class="ph "><span>IGNITE session with the BP speaker</span><small>Image placeholder</small></div>
-          <div class="ph "><span>IGNITE logo or poster</span><small>Image placeholder</small></div>
         </div>
         <div class="entry__body">
           <div>
@@ -824,10 +792,6 @@ ul { list-style: none; }
             <h2>Mirror Board and Aerospace &amp; Aviation Society</h2>
           </div>
           <span class="tag tag--lime">Student Governance</span>
-        </div>
-        <div class="entry__media">
-          <div class="ph "><span>Aerospace Society session</span><small>Image placeholder</small></div>
-          <div class="ph "><span>Mirror Board photo</span><small>Image placeholder</small></div>
         </div>
         <div class="entry__body">
           <div>
